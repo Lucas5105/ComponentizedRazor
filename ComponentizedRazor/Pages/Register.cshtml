@@ -1,0 +1,16 @@
+﻿@page
+@model ComponentizedRazor.Pages.RegisterModel
+@{
+}
+
+@using Components.Button
+@using Components.Input
+
+<div class="d-flex justify-content-center align-items-center h-100">
+    <form class="d-flex flex-column gap-3" method="post" asp-page-handler="Register">
+        <partial name="../Components/Input/Index" model="@(new Input {Type=enumInputType.Email, Label = "Email", PlaceHolder="Inform Email", Name="userEmail", isRequired = true})" />
+        <partial name="../Components/Input/Index" model="@(new Input {Type=enumInputType.Password, Label = "Password", PlaceHolder="Inform Password", Name="userPassword", isRequired = true})" />
+        <partial name="../Components/Button/Index" model="@(new Button {Text = "Se Cadastrar", Type = enumButtonTypes.Submit})" />
+        <a href="/Login">Login</a>
+    </form>
+</div>
